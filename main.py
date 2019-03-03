@@ -9,7 +9,7 @@ def draw_menu(stdscr):
     k = 0
     cursor_x = 0
     cursor_y = 0
-    x = 0;
+    x = 0
 
     # Clear and refresh the screen for a blank canvas
     stdscr.clear()
@@ -33,7 +33,7 @@ def draw_menu(stdscr):
          stdscr.clear()
          height, width = stdscr.getmaxyx()
 
-         count = {1: curses.ACS_CKBOARD, 2: '-', 3: '-', 4: '-', 5: '-', 6: '-', 7: '-', 8: '-'}
+         
          count_list = ['-', '-', '-', '-', '-', '-', '-', '-']
 
             
@@ -57,14 +57,12 @@ def draw_menu(stdscr):
 
          # Declaration of strings
          title = "Curses example"[:width-1]
-         subtitle = "{}  {}  {}  {}  {}  {}  {}  {}".format(count[1],count[2],count[3],count[4],count[5],count[6],count[7],count[8])[:width-1]
-         
          keystr = "Last key pressed: {}".format(k)[:width-1]
          statusbarstr = "Press 'q' to exit | STATUS BAR | Pos: {}, {}".format(cursor_x, cursor_y)
          if k == 0:
-             keystr = "No key press detected..."[:width-1]
+            keystr = "No key press detected..."[:width-1]
 
-            # Centering calculations
+         # Centering calculations
          start_x_title = int((width // 2) - (len(title) // 2) - len(title) % 2)
          start_x_subtitle = int((width // 2) - (len(subtitle) // 2) - len(subtitle) % 2)
          start_x_keystr = int((width // 2) - (len(keystr) // 2) - len(keystr) % 2)
