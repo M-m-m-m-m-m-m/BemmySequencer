@@ -1,13 +1,9 @@
 import sys,os
 import curses
-import mido
 import time
 import locale
 import pdb
 locale.setlocale(locale.LC_ALL, '')
-
-output = mido.open_output('IAC Driver Bus 1')
-msg = mido.Message('note_on')
 
 def draw_menu(stdscr):
     k = 0
@@ -67,11 +63,6 @@ def draw_menu(stdscr):
          statusbarstr = "Press 'q' to exit | STATUS BAR | Pos: {}, {}".format(cursor_x, cursor_y)
          if k == 0:
              keystr = "No key press detected..."[:width-1]
-
-         #play sound
-         msg.note = cursor_x/2 +50
-         msg.velocity = cursor_y + 64
-         output.send(msg)
 
             # Centering calculations
          start_x_title = int((width // 2) - (len(title) // 2) - len(title) % 2)
